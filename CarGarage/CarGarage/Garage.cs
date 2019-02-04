@@ -23,11 +23,14 @@ namespace CarGarage
         {
             CarsInGarage.Remove(new Car());
         }
-
         public void FuelAllCars()
         {
-            
-        }
+            foreach (var Car in CarsInGarage)
+            {
+                Car.GasLevel = 120;
+            }
+         }
+        
     } 
 
 }

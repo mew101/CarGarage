@@ -1,6 +1,7 @@
 ﻿using System;
 using Xunit;
-using System.Collections.Generic; //just added U WERE MISSING THIS PART IN YOUR gARAGE TEST
+using System.Collections.Generic; 
+
 namespace CarGarage.Tests
 {
     public class GarageTests
@@ -31,16 +32,16 @@ namespace CarGarage.Tests
             var carGarage = new Garage();
 
             // Act
+            //var bmw = new Car();
+            //var bentley = new Car();
+
             var bmw = new Car();
             var bentley = new Car();
-
             carGarage.CarsInGarage.Add(bmw);
             carGarage.CarsInGarage.Add(bentley);
-
-            carGarage.CarsInGarage.Remove(bmw);
-
+            carGarage.CarsInGarage.Remove(bentley);
             // Assert
-            Assert.Equal(bentley, carGarage.CarsInGarage[0]);
+            Assert.Equal(bmw, carGarage.CarsInGarage[0] );
         }
 
         [Fact]
@@ -48,8 +49,19 @@ namespace CarGarage.Tests
         {
             // Tests FuelAllCars() method
             // Arrange
+            var carGarage = new Garage();
+            var bmw = new Car();
+            var bentley = new Car();
+           
             // Act
+            carGarage.CarsInGarage.Add(bmw);
+            carGarage.CarsInGarage.Add(bentley);
+            
+            carGarage.FuelAllCars();
+
             // Assert
+            Assert.Equal(120, bmw.GasLevel);
+            Assert.Equal(120, bentley.GasLevel);
         }
 
         [Fact]

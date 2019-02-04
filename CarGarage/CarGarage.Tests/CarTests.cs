@@ -13,13 +13,13 @@ namespace CarGarage.Tests
         {
             // Tests Accelerate() method in Car increases Speed
             // Arrange
-            var firstCar = new Car();
+            var car = new Car();
 
             // Act
-            firstCar.Accelerate();
+            car.Accelerate();
 
             // Assert
-            Assert.Equal(10, firstCar.Speed);
+            Assert.Equal(10, car.Speed);
         }
         
         [Fact]
